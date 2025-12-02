@@ -12,7 +12,7 @@
             <div class="col-md-6 offset-md-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h3 class="display-6">Editar Ticket</h3>
+                        <h1 class="display-6">Editar Ticket</h1>
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label for="codigo" name="codigo" id="codigo" class="form-label">Codigo:</label>
@@ -53,7 +53,7 @@
                     </div>                    
                 </div>            
             </div>
-            <div class="col">
+            <div class="col-md-6 offset-md-3">
                 <table class="table">
                     <thead>
                         <tr>
