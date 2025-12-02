@@ -20,7 +20,7 @@
                             <li class="list-group-item">.</li>
                             <li class="list-group-item">estado</li>
                         </ul>
-                        <a href="" class="btn btn-primary mt-3">volver</a>
+                        <a href="login.php" class="btn btn-primary mt-3">volver</a>
                     </div>
                 </div>
             </div>
