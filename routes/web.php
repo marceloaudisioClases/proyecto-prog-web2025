@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/principal', function () {
     return view('principal');
 })->name("principal");
+Route::get('/ticket/verificacion', function () {
+    return view('TicketVerificacion');
+});
+
