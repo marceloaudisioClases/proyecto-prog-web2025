@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CiudadController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| Aquí se registran las rutas para la aplicación web.
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Ruta raíz: va directamente al formulario de creación de ciudades
+Route::get('/', [CiudadController::class, 'create']);
+
+// Rutas del CRUD de ciudades
+Route::resource('ciudades', CiudadController::class);
