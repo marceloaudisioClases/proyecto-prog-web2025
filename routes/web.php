@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/UsuariosController', function () {
-    return view('newuser');
+Route::get('/usuarios', function () {
+    return view('usuarios.newuser');
 });
