@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/ticket/verificacion', function () {
     return view('ticket.TicketVerificacion');
+});
+
+Route::get('/ticket/editarticket', function () {
+    return view('ticket.editarticket');
 });
 
