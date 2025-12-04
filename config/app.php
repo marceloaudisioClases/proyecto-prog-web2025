@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'copyright' => env('APP_COPYRIGHT', 'CAPOS DE PROGRAMACION 2025'),
 
     /*
     |--------------------------------------------------------------------------
