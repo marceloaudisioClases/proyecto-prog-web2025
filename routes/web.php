@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TicketController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/ticket/verificacion', function () {
+Route::get('/',[AuthController::class,'login'])->name('login');
+Route::get('/principal', function () {
+    return view('principal');
+})->name("principal");
+Route::get('/verificacion', function () {
     return view('ticket.TicketVerificacion');
-});
+})->name("verificacion");
 
 Route::get('/ticket/editarticket', function () {
     return view('ticket.editarticket');
 });
 
+Route::get('/tickets/nuevo', [TicketController::class, 'create'])->name('tickets.create');
+Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
