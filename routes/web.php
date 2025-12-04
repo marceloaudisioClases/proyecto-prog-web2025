@@ -18,9 +18,9 @@ Route::get('/',[AuthController::class,'login'])->name('login');
 Route::get('/principal', function () {
     return view('principal');
 })->name("principal");
-Route::get('/ticket/verificacion', function () {
-    return view('TicketVerificacion');
-});
+Route::get('/verificacion', function () {
+    return view('ticket.TicketVerificacion');
+})->name("verificacion");
 
 Route::get('/tickets/nuevo', [TicketController::class, 'create'])->name('tickets.create');
 Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
