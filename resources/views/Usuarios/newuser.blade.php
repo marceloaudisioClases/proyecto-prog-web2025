@@ -30,7 +30,7 @@
 
                   <div class="input-group mb-3">
                     <span class="input-group-text">Fecha de Ingreso</span>
-                    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                    <input type="text" class="form-control" placeholder="" aria-label="">
                   </div>
 
                   <div class="input-group">
