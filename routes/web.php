@@ -22,5 +22,9 @@ Route::get('/verificacion', function () {
     return view('ticket.TicketVerificacion');
 })->name("verificacion");
 
+Route::get('/ticket/editarticket', function () {
+    return view('ticket.editarticket');
+});
+
 Route::get('/tickets/nuevo', [TicketController::class, 'create'])->name('tickets.create');
 Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
