@@ -35,7 +35,7 @@
                                     <span class="badge text-bg-warning">Pendiente</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary">Editar</button>
+                                    <a href="{{ route('ticket.editar') }}" class="btn btn-primary btn-sm">Editar</a>
                                 </td>
                                 </tr>
                                                         <tr>
@@ -46,7 +46,7 @@
                                     <span class="badge text-bg-warning">Pendiente</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary">Editar</button>
+                                    <a href="{{ route('ticket.editar') }}" class="btn btn-primary btn-sm">Editar</a>
                                 </td>
                                 </tr>
                             </tbody>

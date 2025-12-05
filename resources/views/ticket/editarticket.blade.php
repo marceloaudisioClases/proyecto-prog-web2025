@@ -11,19 +11,19 @@
                     <div class="card-body">                        
                         <form action="" method="post">
                             <div class="mb-3">
-                                <label for="codigo" name="codigo" id="codigo" class="form-label">Codigo:</label>
+                                <label for="codigo" name="codigo" class="form-label">Codigo:</label>
                                 <input type="text" name="codigo" id="codigo"  class="form-control form-control-sm">
                             </div>
                             <div class="mb-3">
-                                <label for="titulo" name="titulo" id="titulo" class="form-label form-label">Titulo:</label>
+                                <label for="titulo" name="titulo" class="form-label form-label">Titulo:</label>
                                 <input type="text" name="titulo" id="titulo"  class="form-control form-control-sm">
                             </div>
                             <div class="mb-3">
-                                <label for="descripcion" name="descripcion" id="descripcion" class="form-label">Descripcion:</label>
+                                <label for="descripcion" name="descripcion" class="form-label">Descripcion:</label>
                                 <textarea name="descripcion" id="descripcion"  class="form-control form-control-sm"></textarea>
                             </div> 
                             <div class="mb-3">
-                                <label for="prioridad" name="prioridad" id="prioridad" class="form-label">Prioridad:</label>
+                                <label for="prioridad" name="prioridad" class="form-label">Prioridad:</label>
                                 <select class="form-select form-select-sm" name="prioridad" id="prioridad">
                                     <option value="">Alta</option>
                                     <option value="">Normal</option>
@@ -31,7 +31,7 @@
                                 </select>
                             </div>   
                             <div class="mb-3">
-                                <label for="categoria" name="categoria" id="categoria" class="form-label">Categoria:</label>
+                                <label for="categoria" name="categoria" class="form-label">Categoria:</label>
                                 <select class="form-select form-select-sm" name="categoria" id="categoria">
                                     <option value="">*1</option>
                                     <option value="">*2</option>
@@ -39,15 +39,21 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="estado" name="estado" id="estado" class="form-label">Estado:</label>
+                                <label for="estado" name="estado" class="form-label">Estado:</label>
                                 <select class="form-select form-select-sm" name="estado" id="estado">
                                     <option value="">Pendiente</option>
                                     <option value="">Finalizado</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-3">Guardar</button>                   
+                            <button type="submit" class="btn btn-primary btn-sm mb-3">Guardar</button>                   
                         </form>
-                        <button class="btn btn-primary">Registrar Solucion</button>                           
+                        <form action="" method="post">
+                            <div class="mb-3">
+                                <label for="solucion" name="solucion" class="form-label">Solución:</label>
+                                <input type="text" class="form-control form-control-sm" name="solucion" id="solucion" >
+                            </div>                           
+                            <button class="btn btn-primary btn-sm">Registrar Solucion</button> 
+                        </form>                                                  
                     </div>                    
                 </div>            
             </div>
