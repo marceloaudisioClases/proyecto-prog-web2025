@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col">
                 <div class="m-3">
-                    <a href="" class="btn btn-primary"><i class="bi bi-plus-lg"></i>Nuevo ticket</a>
+                    <a href="{{ route('tickets.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i>Nuevo ticket</a>
                 </div>
             </div>
         </div>

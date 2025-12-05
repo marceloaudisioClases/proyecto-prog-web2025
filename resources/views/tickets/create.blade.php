@@ -1,57 +1,58 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nuevo Ticket</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+@extends('layouts.app')
 
-<div class="container mt-5">
 
-    <h1 class="mb-4 text-center">Crear Nuevo Ticket</h1>
+@section('title', 'Nuevo Ticket')
 
-    <!-- Mensaje de éxito -->
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mt-4">
+                <div class="card-body p-4">
+                    <h2 class="mb-3">Nuevo Ticket</h2>
 
-    <!-- Formulario -->
-    <div class="card shadow">
-        <div class="card-body">
-            <form action="{{ route('tickets.store') }}" method="POST">
-                @csrf
+                    
+                    @if(session('success'))
+                        <div class="alert alert-success mb-3">{{ session('success') }}</div>
+                    @endif
 
-                <div class="mb-3">
-                    <label class="form-label">Título</label>
-                    <input type="text" name="titulo" class="form-control" required>
+                    @if($errors->any())
+                        <div class="alert alert-danger mb-3">
+                            <ul class="mb-0">
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('tickets.store') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título:</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" value="{{ old('titulo') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción:</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3">{{ old('descripcion') }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="estado" class="form-label">Estado:</label>
+                            <select class="form-select" id="estado" name="estado">
+                                <option value="abierto" {{ old('estado') == 'abierto' ? 'selected' : '' }}>Abierto</option>
+                                <option value="cerrado" {{ old('estado') == 'cerrado' ? 'selected' : '' }}>Cerrado</option>
+                                <option value="pendiente" {{ old('estado') == 'pendiente' ? 'selected' : '' }}>Pendiente</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                    </form>
+
                 </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Descripción</label>
-                    <textarea name="descripcion" class="form-control" rows="3" required></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Estado</label>
-                    <select name="estado" class="form-select" required>
-                        <option value="">Seleccione un estado</option>
-                        <option value="abierto">Abierto</option>
-                        <option value="en_proceso">En proceso</option>
-                        <option value="cerrado">Cerrado</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100">Guardar Ticket</button>
-            </form>
+            </div>
         </div>
     </div>
-
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@endsection
