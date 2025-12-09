@@ -13,7 +13,7 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <h1>Ingreso:</h1>
-                        <form action="" method="post">
+                        <form action="{{ route("principal") }}" method="post">
                             <div class="mb-3">
                                 <label for="usuario" class="form-label">Usuario:</label>
                                 <input type="text" class="form-control" id="usuario" name="usuario">
