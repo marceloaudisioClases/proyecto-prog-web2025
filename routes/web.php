@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\PrioridadesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,7 @@ Route::get('/ticket/editarticket', function () {
 
 Route::get('/tickets/nuevo', [TicketController::class, 'create'])->name('tickets.create');
 Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
+
+Route::get('/prioridades',[PrioridadesController::class,'prioridades'])->name('prioridades.edit');
+Route::POST('/prioridades/crear',[PrioridadesController::class,'nuevaprioridad'])->name('prioridades.nueva');
+
