@@ -14,7 +14,7 @@
           <div class="card">
             <div class="card-body">
                     <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <span class="input-group-text" id="basic-addon1">Usuario</span>
                     <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1">
                   </div>
 
