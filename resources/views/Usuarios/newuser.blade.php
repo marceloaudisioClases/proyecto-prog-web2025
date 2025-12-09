@@ -8,9 +8,22 @@
   </head>
   <body>
                                        <h1 class="text-center">Informacion de Usuario</h1>
-    <div class="container">
+    <div class="container  ">
       <div class="row">
-        <div class="col">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail"
+                        alt="avatar">
+                    <h6>Subir Foto...</h6>
+                    <input type="file" class="text-center center-block file-upload">
+                </div>
+                </hr><br>
+            </div>
+          </div>
+        </div>
+                <div class="col-sm-8">
           <div class="card">
             <div class="card-body">
                     <div class="input-group mb-3">
