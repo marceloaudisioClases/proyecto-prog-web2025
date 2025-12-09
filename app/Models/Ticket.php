@@ -12,6 +12,11 @@ class Ticket extends Model
     protected $fillable = [
         'titulo',
         'descripcion',
+        'prioridad_id',
         'estado',
     ];
+
+    public function Prioridad(){
+        return $this->belongsTo(Prioridad::class);
+    }
 }
