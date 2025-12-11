@@ -19,6 +19,9 @@ class AuthController extends Controller
         $request->validate([
             'usuario' => ['required','string'],
             'password' => ['required']
+        ],[
+            "usuario.required"=>"El usuario es requerido",
+            "password.required"=>"La contraseña no puede estar vacía"
         ]);
 
         $credenciales = array(
@@ -30,7 +33,7 @@ class AuthController extends Controller
            $request->session()->regenerate();
            return redirect()->intended(route("principal"));
         }else{
-            return redirect()->back()->with("error","Credenciales Incorrectas");
+            return redirect()->back()->withErrors("Credenciales Incorrectas");
         }
     }
 }

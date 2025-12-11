@@ -9,13 +9,13 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="col-6 offset-3">
+            <div class="col-md-6 offset-md-3">
                 <div class="card mt-3">
                     <div class="card-body">
                         <h1>Ingreso:</h1>
                         @if($errors->any())
                             <div class="alert alert-warning">
-                                Error
+                                {{ $errors->first() }}
                             </div>
                         @endif
                         <form action="{{ route("login.ingreso") }}" method="post">
@@ -37,7 +37,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-6 offset-3">
+            <div class="col-md-6 offset-md-3">
                 <div class="card mt-3">
                     <div class="card-body ">
                         <h1>Verificacion:</h1>
