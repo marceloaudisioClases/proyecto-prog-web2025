@@ -20,6 +20,11 @@ Route::post('/ingreso',[AuthController::class,'ingreso'])->name('login.ingreso')
 Route::get('/principal', function () {
     return view('principal');
 })->name("principal");
+
+Route::get('/usuarios', function () {
+    return view('usuarios.newuser');
+})->name("newuser");
+
 Route::get('/verificacion', function () {
     return view('ticket.TicketVerificacion');
 })->name("verificacion");
