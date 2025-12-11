@@ -13,14 +13,20 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <h1>Ingreso:</h1>
-                        <form action="{{ route("principal") }}" method="post">
+                        @if($errors->any())
+                            <div class="alert alert-warning">
+                                Error
+                            </div>
+                        @endif
+                        <form action="{{ route("login.ingreso") }}" method="post">
+                        @csrf
                             <div class="mb-3">
                                 <label for="usuario" class="form-label">Usuario:</label>
                                 <input type="text" class="form-control" id="usuario" name="usuario">
                             </div>
                             <div class="mb-3">
                                 <label for="contraseña" class="form-label">Contraseña:</label>
-                                <input type="password" class="form-control" id="contraseña" name="contraseña">
+                                <input type="password" class="form-control" id="password" name="password">
                             </div>
                             <button type="submit" class="btn btn-primary">Ingresar</button>
                         </form>

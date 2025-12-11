@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 
 class AuthController extends Controller
@@ -13,19 +16,20 @@ class AuthController extends Controller
 
     public function ingreso(Request $request){
         $request->validate([
-            'name' => ['required','string'],
+            'usuario' => ['required','string'],
             'password' => ['required']
         ]);
 
         $credenciales = array(
-            "name"=>$request->name,
-            "password"=>$request->password,
+            "name"=>$request->usuario,
+            "password"=>$request->password
         );
 
         if (Auth::attempt($credenciales)) {
            $request->session()->regenerate();
-           return redirect("")->intended(route("principal"));
+           return redirect()->intended(route("principal"));
+        }else{
+            return redirect()->back()->with("error","Credenciales Incorrectas");
         }
-
     }
 }
