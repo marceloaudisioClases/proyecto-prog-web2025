@@ -16,6 +16,7 @@ use App\Http\Controllers\PrioridadesController;
 */
 
 Route::get('/',[AuthController::class,'login'])->name('login');
+Route::post('/ingreso',[AuthController::class,'ingreso'])->name('login.ingreso');
 Route::get('/principal', function () {
     return view('principal');
 })->name("principal");
