@@ -19,7 +19,7 @@ Route::get('/',[AuthController::class,'login'])->name('login');
 Route::post('/',[AuthController::class,'ingreso'])->name('login.ingreso');
 Route::get('/principal', function () {
     return view('principal');
-})->name("principal");
+})->middleware("auth")->name("principal");
 
 Route::get('/usuarios', function () {
     return view('usuarios.newuser');
@@ -39,3 +39,4 @@ Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store
 Route::get('/prioridades',[PrioridadesController::class,'prioridades'])->name('prioridades.edit');
 Route::POST('/prioridades/crear',[PrioridadesController::class,'nuevaprioridad'])->name('prioridades.nueva');
 
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');

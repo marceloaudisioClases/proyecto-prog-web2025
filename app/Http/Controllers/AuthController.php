@@ -36,4 +36,11 @@ class AuthController extends Controller
             return redirect()->back()->withErrors("Credenciales Incorrectas");
         }
     }
+
+    public function logout(Request $request){
+        Auth::logout();
+        session()->invalidate();
+        session()->regenerate();
+        return redirect()->route("login")->with("msg","saliste");
+    }
 }
