@@ -28,7 +28,7 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
-        
+        <span class="p-1">{{ auth()->user()->name }}</span>
         <a class="btn btn-outline-success" href="{{ route("logout")}}">Salir</a>
       </form>
     </div>
