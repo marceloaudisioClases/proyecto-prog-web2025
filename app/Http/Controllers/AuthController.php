@@ -19,6 +19,9 @@ class AuthController extends Controller
         $request->validate([
             'usuario' => ['required','string'],
             'password' => ['required']
+        ],[
+            "usuario.required"=>"El usuario es requerido",
+            "password.required"=>"La contraseña no puede estar vacía"
         ]);
 
         $credenciales = array(
