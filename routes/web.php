@@ -17,10 +17,13 @@ use App\Http\Controllers\PrioridadesController;
 
 Route::get('/',[AuthController::class,'login'])->name('login');
 Route::post('/',[AuthController::class,'ingreso'])->name('login.ingreso');
-Route::get('/principal', function () {
-    return view('principal');
-})->middleware("auth")->name("principal");
 
+Route::middleware('auth')->group(function () {
+    Route::get('/principal', function () {
+        return view('principal');
+    })->name("principal");
+
+});
 Route::get('/usuarios', function () {
     return view('usuarios.newuser');
 })->name("newuser");
