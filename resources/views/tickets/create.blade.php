@@ -47,6 +47,15 @@
                             </select>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="prioridad" class="form-label">Prioridad:</label>
+                            <select class="form-select" id="prioridad" name="prioridad">
+                                <option value="alta" {{ old('prioridad_id') == 'alta' ? 'selected' : '' }}>Alta</option>
+                                <option value="media" {{ old('prioridad_id') == 'media' ? 'selected' : '' }}>Media</option>
+                                <option value="baja" {{ old('prioridad_id') == 'baja' ? 'selected' : '' }}>Baja</option>
+                            </select>
+                        </div>
+
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>
                     </form>
 
