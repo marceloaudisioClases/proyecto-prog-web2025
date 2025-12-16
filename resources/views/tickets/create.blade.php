@@ -48,11 +48,11 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="prioridad" class="form-label">Prioridad:</label>
-                            <select class="form-select" id="prioridad" name="prioridad">
-                                <option value="alta" {{ old('prioridad_id') == 'alta' ? 'selected' : '' }}>Alta</option>
-                                <option value="media" {{ old('prioridad_id') == 'media' ? 'selected' : '' }}>Media</option>
-                                <option value="baja" {{ old('prioridad_id') == 'baja' ? 'selected' : '' }}>Baja</option>
+                            <label for="prioridad_id" class="form-label">Prioridad:</label>
+                            <select class="form-select" id="prioridad_id" name="prioridad_id">
+                                <option value="1" {{ old('prioridad_id') == 'alta' ? 'selected' : '' }}>Alta</option>
+                                <option value="2" {{ old('prioridad_id') == 'media' ? 'selected' : '' }}>Media</option>
+                                <option value="3" {{ old('prioridad_id') == 'baja' ? 'selected' : '' }}>Baja</option>
                             </select>
                         </div>
 
