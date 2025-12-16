@@ -19,6 +19,7 @@ class TicketController extends Controller
             'titulo' => 'required',
             'descripcion' => 'required',
             'estado' => 'required',
+            'prioridad_id' => 'required',
         ]);
 
         // Guardar ticket
@@ -26,6 +27,7 @@ class TicketController extends Controller
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'estado' => $request->estado,
+            'prioridad_id'=> $request->prioridad_id,
         ]);
 
         // Mensaje de éxito
