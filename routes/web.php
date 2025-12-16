@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PrioridadesController;
+use App\Http\Controllers\PrincipalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,9 @@ Route::post('/',[AuthController::class,'ingreso'])->name('login.ingreso');
 
 Route::middleware('auth')->group(function () {
     
-    Route::get('/principal', function () {
-        return view('principal');
-    })->name("principal");
+Route::get('/principal',[PrincipalController::class,'index'])->name('principal.index');
+
+
 
 });
 Route::get('/usuarios', function () {
