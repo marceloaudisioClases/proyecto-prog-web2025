@@ -12,6 +12,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Soprtek" />
 <link rel="manifest" href="/site.webmanifest" />
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
   </head>
   <body>
     @include("layouts.partials.navbar")
@@ -19,8 +21,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     
-    <footer>
+    <footer class="bg-secondary text-white text-center footer">
+      <h1>
         {{ config("app.copyright") }}
+      </h1>
     </footer>
     </body>
 
