@@ -44,3 +44,6 @@ Route::get('/prioridades',[PrioridadesController::class,'prioridades'])->name('p
 Route::POST('/prioridades/crear',[PrioridadesController::class,'nuevaprioridad'])->name('prioridades.nueva');
 
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+// Rutas para administrar usuarios
+Route::resource('usuarios', App\Http\Controllers\UserController::class)->except(['show']);
