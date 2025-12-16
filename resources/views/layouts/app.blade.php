@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     
-    <footer class="bg-secondary text-white text-center footer">
+    <footer class="d-block p-2 text-bg-dark text-center">
       <h1>
         {{ config("app.copyright") }}
       </h1>
