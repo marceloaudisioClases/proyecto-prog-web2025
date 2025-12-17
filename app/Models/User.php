@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'estado', // agregado para permitir asignación masiva
+        'estado',
     ];
 
     /**

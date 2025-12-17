@@ -11,6 +11,6 @@ class Prioridad extends Model
     protected $fillable = ["nombre","estado"];
 
     public function Ticket(){
-        return $this->hasMany(Ticket::class);
+        return $this->hasMany(Ticket::class); 
     }
 }

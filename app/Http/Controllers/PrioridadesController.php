@@ -8,7 +8,7 @@ use App\Models\Prioridad;
 class PrioridadesController extends Controller
 {
     protected function prioridades(){
-        $prioridades = Prioridad::all();
+        $prioridades = Prioridad::all(); 
 
         return view("prioridades.prioridades", compact("prioridades"));
     }
@@ -19,7 +19,7 @@ class PrioridadesController extends Controller
             "nombre.required"=> "El nombre es obligatoria",     
         ]);
         $nuevo= array("nombre"=> $request->nombre,);
-        Prioridad::create($nuevo);
+        Prioridad::create($nuevo); 
         return redirect()->route("prioridades.edit")->with("success","Prioridad guardada!");
     }
 }
