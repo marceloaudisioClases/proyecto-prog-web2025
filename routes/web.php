@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\PrioridadesController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/ticket/verificacion', function () {
-    return view('TicketVerificacion');
-});
+Route::get('/',[AuthController::class,'login'])->name('login');
+Route::post('/',[AuthController::class,'ingreso'])->name('login.ingreso');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/principal', function () {
+        return view('principal');
+    })->name("principal");
+
+    Route::get('/usuario/editarcontraseña', [UserController::class, 'editarcontraseña'])->name('usuarios.editarcontraseña');
+    Route::post('/usuario/actualizarcontraseña', [UserController::class, 'actualizarcontraseña'])->name('usuarios.actualizarcontraseña');
+
+});
+Route::get('/usuarios', function () {
+    return view('usuarios.newuser');
+})->name("newuser");
+
+Route::get('/verificacion', function () {
+    return view('ticket.TicketVerificacion');
+})->name("verificacion");
+
+Route::get('/ticket/editarticket', function () {
+    return view('ticket.editarticket');
+})->name('ticket.editar');
+
+Route::get('/tickets/nuevo', [TicketController::class, 'create'])->name('tickets.create');
+Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
+
+Route::get('/prioridades',[PrioridadesController::class,'prioridades'])->name('prioridades.edit');
+Route::POST('/prioridades/crear',[PrioridadesController::class,'nuevaprioridad'])->name('prioridades.nueva');
+
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+// Rutas para administrar usuarios
+Route::resource('usuarios', App\Http\Controllers\UserController::class)->except(['show']);
