@@ -44,6 +44,7 @@ Route::get('/tickets/nuevo', [TicketController::class, 'create'])->name('tickets
 Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
 
 Route::get('/prioridades',[PrioridadesController::class,'prioridades'])->name('prioridades.edit');
+Route::get('/prioridades/mostrar',[PrioridadesController::class,'mostrar'])->name('prioridades.mostrar');
 Route::POST('/prioridades/crear',[PrioridadesController::class,'nuevaprioridad'])->name('prioridades.nueva');
 
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
