@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prioridad extends Model
 {
-    protected $table = "prioridades";
+    protected $table = "tickets";
     protected $fillable = ["nombre","estado"];
 
     public function Ticket(){
